@@ -1,0 +1,53 @@
+<div class="form">
+
+  {% form_for activation %}
+
+  	<div class="form-errors">{% error_messages_for activation %}</div>
+
+    <input type="hidden" name="activation[activation_code]" value="{{ activation.activation_code }}" />
+
+  	<div class="row-fluid">
+
+      <div class="span6"><label for="activation_first_name">First Name</label>{% text_field "first_name", class:"text" %}</div>
+      <div class="span6"><label for="activation_last_name">Last Name</label>{% text_field "last_name", class:"text" %}</div>
+
+    </div>
+    <div class="row-fluid">
+
+      <div class="span6"><label for="activation_username">User name</label>
+        {% text_field "username", class:"text" %}
+      </div>
+
+      <div class="span6 padtopmore">
+        <small class="padtop">Your public profile will be at {{ site.full_url }}{% if request.current_signup.has_username? %}{{ request.current_signup.username }}{% else %}username{% endif %}</small>
+      </div>
+
+    </div>
+
+    {% if activation.is_address_needed %}
+    <div class="row-fluid">
+
+      <div class="span6"><label for="activation_submitted_address">Address (Street, City, State, Postal code)</label>{% text_field "submitted_address", class:"text" %}</div>
+
+      {% if activation.is_mobile_needed and site.ask_for_mobiles? %}
+
+      <div class="span6"><label for="activation_mobile_number">Mobile phone (optional)</label>{% phone_field "mobile_number", class:"text" %}<label class="checkbox" for="activation_mobile_opt_in">{% check_box "mobile_opt_in", class:"check_box", type:"checkbox" %} Send me text message updates</label></div>
+
+      {% endif %}
+
+    </div>
+    {% endif %}
+  
+  	<div class="row-fluid">
+
+      <div class="span6"><label for="activation_password">Choose your password</label>{% password_field "password", class:"text" %}</div>
+      <div class="span6"><label for="activation_password_confirmation">Repeat password</label>{% password_field "password_confirmation", class:"text" %}</div>
+
+    </div>
+
+  	  {% submit_tag "Activate account", class:"submit-button" %}
+  	  <div class="form-submit"></div>
+	
+  {% endform_for %}
+
+</div>

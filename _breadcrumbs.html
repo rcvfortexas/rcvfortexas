@@ -1,0 +1,68 @@
+{% if page.level > 0 %}
+{% assign home = page.parent %}
+{% else %}
+{% assign home = page %}
+{% endif %}
+
+{% if home.has_subnav? and page.is_nav? %}
+
+<div class="breadcrumbs-wrap">
+  <div id="page-nav" class="page-nav">
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a> <span class="divider">&raquo;</span></li>
+        {% for ancestor in page.ancestors %}
+        {% if ancestor.is_homepage? == false %}
+        {% if forloop.last %}
+        <li><a href="{{ ancestor.url }}">{{ ancestor.name }}</a></li>
+        {% else %}
+        <li><a href="{{ ancestor.url }}">{{ ancestor.name }}</a> <span class="divider">&raquo;</span></li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </ul>
+  </div>
+</div>
+
+{% elsif page.has_parent? %}
+
+<div id="page-nav" class="page-nav">
+  <ul class="breadcrumbs">
+    <li><a href="/">Home</a> <span class="divider">&raquo;</span></li>
+    {% for ancestor in page.ancestors %}
+    {% if ancestor.is_homepage? == false %}
+    {% if forloop.last %}
+    <li><a href="{{ ancestor.url }}">{{ ancestor.name }}</a></li>
+    {% else %}
+    <li><a href="{{ ancestor.url }}">{{ ancestor.name }}</a> <span class="divider">&raquo;</span></li>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+  {% if page.has_subnav? %}
+
+  <div class="subnav-container clearfix" id="subnav-container" role="navigation">
+    <ul class="subnav">
+      {% for child in page.nav_children %}
+      {% if child.leaf? or child.nav_children.size == 0 %}
+      <li class="{% if child.is_or_is_ancestor_of_current_page? %}active{% else %}nodrop{% endif %}">
+        <a href="{{ child.url }}">{{ child.name }}</a>
+      </li>
+      {% else %}
+      <li class="{% if child.is_or_is_ancestor_of_current_page? %}active-drop{% else %}drop{% endif %}">
+        <a href="{{ child.url }}">{{ child.name }} <i class="icon-angle-down"></i></a>
+        <ul class="sub">
+          {% for child2 in child.nav_children %}
+          <li><a href="{{ child2.url }}">{{ child2.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% endif %}
+
+{% endif %}

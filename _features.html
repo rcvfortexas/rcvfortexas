@@ -1,0 +1,56 @@
+{% if page.features_count > 0 %}
+
+{% if page.features.size > 0 %}
+
+{% assign first_feature_height = page.features.first.image_height %}
+{% if page.features.size == 1 %}
+  {% assign first_feature_height = 'none' %}
+{% endif %}
+
+<div id="page-features" class="page-features" style="max-height: {{ first_feature_height  }}px">
+  {% if page.features.size == 1 %}
+
+  {% for feature in page.features %}
+  <a href="{{ feature.page.url }}" class="single-feature">
+    <img src="{{ feature.image_url }}" height="{{ feature.image_height }}" width="{{ feature.image_width }}"/>
+  </a>
+  {% if feature.headline.size > 0 %}
+    <div class="features-headline-wrap">
+      <a class="features-headline" href="{{ feature.page.url }}">
+        <span>{{ feature.headline }}</span>
+      </a>
+    </div>
+    {% endif %}
+  {% endfor %}
+
+  {% else %}
+  <div id="feature-slides" class="feature-slides">
+    <img src="/assets/loading.gif" alt="loading" class="slider-loading" width="66" height="66">
+
+    <ul class="slides clearfix" >
+
+      {% for feature in page.features %}
+      <li>
+        <a href="{{ feature.page.url }}">
+          <img src="{{ feature.image_url }}" height="{{ feature.image_height }}" width="{{ feature.image_width }}"/>
+        </a>
+        {% if feature.headline.size > 0 %}
+        <div class="features-headline-wrap">
+          <a class="features-headline" href="{{ feature.page.url }}">
+            <span>{{ feature.headline }}</span>
+          </a>
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+
+    </ul>
+  </div>
+
+  {% endif %}
+
+</div>
+
+{% endif %}
+
+{% endif %}
