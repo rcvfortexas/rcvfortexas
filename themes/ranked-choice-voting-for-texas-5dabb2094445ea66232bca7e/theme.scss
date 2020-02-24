@@ -55,12 +55,17 @@ $footer-nav-link-bg-active-hover: #ff173e;
 $footer-nav-link-text-shadow-active-hover: #990e25;
 
 // fonts
-$font: "Droid Serif", serif;
-$form-field-font: "Droid Serif", serif;
-$headline-font: "Droid Serif", serif;
+@font-face{
+    font-family:"Futura PT W01 Medium";
+    src:url("Fonts/1059752/c0b084f4-7139-4e63-ba96-7f3a421195c3.eot?#iefix");
+    src:url("Fonts/1059752/c0b084f4-7139-4e63-ba96-7f3a421195c3.eot?#iefix") format("eot"),url("Fonts/1059752/f7552419-a773-41ab-ae4a-b12b1d853f02.woff2") format("woff2"),url("Fonts/1059752/83e72918-97c3-41cd-8a7d-4056788a00f0.woff") format("woff"),url("Fonts/1059752/5b88228b-bd3b-49f4-b7c2-db89968ce116.ttf") format("truetype");
+}
+$font: "Futura PT W01 Medium", serif;
+$form-field-font: "Futura PT W01 Medium", sans-serif;
+$headline-font: "Futura PT W01 Medium", sans-serif;
 $headline-weight: bold;
-$swap-font: "Crete Round", serif;
-$swap-font-2: "Crete Round", serif;
+$swap-font: "Futura PT W01 Medium", sans-serif; //"Open Sans Condensed", sans-serif;
+$swap-font-2: "Futura PT W01 Medium", sans-serif; //"Crete Round", serif;
 
 //homepage changes
 $blog-feed: #fff;
