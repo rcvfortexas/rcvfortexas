@@ -88,9 +88,11 @@
       {% endif %}
       {% endif %}
 
+      {%comment%}
       <div class="row-fluid">
         <div class="span12"><label for="signup_activity_is_private" class="checkbox">{% check_box "activity_is_private", class:"checkbox" %} Don't publish this on the website</label></div>
       </div>
+      {%endcomment%}
 
       {% if page.show_consent_form? %}{% include "consent_form" %}{% endif %}
 
