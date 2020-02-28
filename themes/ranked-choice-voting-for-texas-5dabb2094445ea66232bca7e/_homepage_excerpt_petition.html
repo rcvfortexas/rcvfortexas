@@ -153,9 +153,11 @@
   {% if site.ask_to_publish_to_stream? %}
   <div class="row-fluid">
 
+    {%comment%}
     <div class="span12">
       <label class="checkbox" for="petition_signature_is_private">{% check_box "is_private", class:"checkbox" %} Don't publish this on the website</label>
     </div>
+    {%endcomment%}
 
   </div>
   {% endif %}
