@@ -176,11 +176,14 @@
               <div class="bottom-content row-fluid">
                 {% if request.sorta_logged_in? %}
                 <div class="join-form">
-                  <p>Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
+                  <p>
+                  <!--
+                  Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
                   {% if site.show_public_profiles? %}
                     <a href="{{ request.current_signup.profile_url }}">public profile</a>,
                   {% endif %}
                   <a href="{{ request.current_signup.settings_url }}">account settings</a>, or
+                  -->
                   <a href="{{ request.current_signup.logout_url }}">sign out</a>.</p>
                 </div>
                 {% else %}

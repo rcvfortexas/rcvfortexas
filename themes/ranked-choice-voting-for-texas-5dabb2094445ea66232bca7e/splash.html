@@ -142,11 +142,14 @@
             <div class="footer-text-wrap">
               <div class="footer-text">
                 {% if request.logged_in? %}
-                  <p>Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
+                  <p>
+                  <!--
+                  Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
                   {% if site.show_public_profiles? %}
                     <a href="{{ request.current_signup.profile_url }}">public profile</a>,
                   {% endif %}
                   <a href="{{ request.current_signup.settings_url }}">account settings</a>, or
+                  -->
                   <a href="{{ request.current_signup.logout_url }}">sign out</a>.</p>
                 {% else %}
                   <p>Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
