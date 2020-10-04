@@ -84,7 +84,7 @@
 
         <div class="main-container" id="middle">
           <div class="main width-container clearfix">
-            
+
             <div class="onecolumn-container clearfix">
 
             {{ content_for_notifications }}
@@ -115,7 +115,7 @@
               <p class="sitename"><a href="/">{{ site.name }}</a></p>
 
               {{ content_for_footer }}
-              
+
               <ul class="footer-nav clearfix">
                 {% for child in site.root_nav_pages %}
                 <li class="{% if child.is_or_is_ancestor_of_current_page? %}active{% endif %}">
@@ -133,6 +133,7 @@
                   {% if site.has_facebook_page? %}
                   <li class="fb"><a target="_blank" class="icon-facebook-rounded" href="{{ site.broadcaster.facebook_page_profile_url }}"></a></li>
                   {% endif %}
+                  <li><a target="_blank" href="https://www.linkedin.com/company/67366485/admin/"><span class="icon-linkedin"></span></a></li>
                 </ul>
               </div><!-- / .social-nav -->
               {% endif %}
