@@ -109,6 +109,7 @@
         <div class="main-container" id="middle">
           <div class="main width-container clearfix">
 
+            {% comment %}
             {% if page.is_homepage? == true %}
             {% if site.has_volunteer_page? or site.has_donation_page? or site.has_signup_page? %}
 
@@ -193,6 +194,7 @@
 
             {% endif %}
             {% endif %}
+            {% endcomment %}
 
             {% if request.is_sidebar? %}
             {% include "columns_2" %}
