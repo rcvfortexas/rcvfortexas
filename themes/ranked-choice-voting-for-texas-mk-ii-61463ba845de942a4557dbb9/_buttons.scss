@@ -1,0 +1,195 @@
+// buttons
+
+@mixin button(){
+  @include border-radius(3px);
+  background: #008bcc; /* Old browsers */
+  background-image: linear-gradient(to bottom,  #008bcc 0%,#00689a 2%,#0072a4 4%,#0076a8 6%,#0076a8 9%,#006198 43%,#004580 77%,#003b74 94%,#003068 98%,#002659 100%);
+  font: 14px/14px 'Crete Round';
+  text-shadow: #085185 0 -1px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  &:hover, &:focus, &:active {
+    background: #00a7da;
+    background-image: linear-gradient(to bottom,  #00a7da 0%,#007eba 2%,#008ac6 4%,#008fcc 6%,#008ecb 11%,#0081c5 34%,#0059aa 89%,#0055a8 94%,#0050a2 96%,#004797 98%,#003b84 100%);
+    border-color: #065088;
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+  &.call-to-red, &.submit-button.red, &.destroy-link {
+    border-color: #710005;
+    background: #ff0b33; /* Old browsers */
+    background-image: linear-gradient(to bottom,  #ff0b33 0%,#dc0624 2%,#e6082c 6%,#e60523 34%,#e2041d 47%,#cc020c 74%,#bb0105 94%,#af0104 98%,#a20003 100%);
+    text-shadow: #a3030f 0 -1px;
+    &:hover {
+      background: #ff0e3b; /* Old browsers */
+      background-image: linear-gradient(to bottom,  #ff0e3b 0%,#fa082b 2%,#ff0b31 4%,#ff0c34 6%,#ff0c33 11%,#ff0629 36%,#ff041d 57%,#ec0108 94%,#df0105 98%,#d20004 100%);
+    }
+  }
+  &.call-to-green, &.submit-button.green {
+    border-color: #008400;
+    background: #00aa00;
+    background-image: linear-gradient(to bottom,  #00aa00 0%,#007d00 2%,#008700 4%,#008b00 6%,#007d00 34%,#005100 94%,#004d00 96%,#003b00 100%);
+    text-shadow: #005400 0 -1px;
+    &:hover, &:focus {
+      background: #00cc00;
+    background-image: linear-gradient(to bottom,  #00cc00 0%,#00a100 2%,#00ae00 4%,#00b400 6%,#00b200 15%,#008600 91%,#007f00 96%,#007400 98%,#006200 100%);
+    }
+  }
+  &.call-to-silver {
+    border-color: #615d5e;
+    background: #d0cece;
+    background-image: linear-gradient(to bottom,  #d0cece 0%,#9f9c9c 3%,#a7a5a5 6%,#ababab 9%,#adadad 34%,#a7a7a7 53%,#9b9b9b 66%,#7d7d7d 91%,#787777 94%,#6f6d6d 97%,#636060 100%);
+    text-shadow: #615d5e 0 -1px;
+    &:hover, &:focus {
+      background: #dad9d9;
+    background-image: linear-gradient(to bottom,  #dad9d9 0%,#bbb8b8 3%,#c3c1c2 6%,#c7c7c7 9%,#c9c9c9 31%,#c4c4c4 53%,#bcbcbc 66%,#a5a5a5 91%,#a09e9e 94%,#969494 97%,#878384 100%);
+    }
+  }
+  a {
+    color: #fff;
+  }
+}
+
+.button,
+.small_button,
+a.button,
+a.small_button {
+  @include button;
+}
+
+a.call-to-blue {
+  @include button;
+}
+
+.tiny-button {
+  font-size: 12px;
+  padding: 2px 5px;
+  min-height: 100%;
+}
+
+.submit-button, .success-button {
+  @include button;
+  border: 0;
+}
+
+.call-to, a.call-to {
+  @include border-radius(3px);
+  font: 18px/28px 'Crete Round';
+  min-height: 48px;
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+}
+
+// red button, commonly used to cancel actions
+
+.destroy-link {
+  background-color: $red;
+  &:hover {
+    background-color: lighten($red, 5);
+    color: #fff;
+  }
+}
+
+.neutral-link {
+  background-color: $theme-color-1;
+  &:hover {
+    background-color: lighten($theme-color-1, 5);
+  }
+}
+
+// button to close share box
+
+a.button.share-close {
+  @include border-radius(0);
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  background: $border-postlist-color;
+  color: #fff;
+  display: block;
+  font: bold 30px/16px 'Droid Sans';
+  padding: 7px;
+  height: 30px; width: 30px;
+  text-align: center; text-shadow: darken($border-postlist-color, 30) 0 1px;
+}
+
+// read more link
+
+.read-more, .read_more {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+a[class^="login-button"], a[class*=" login-button"] {
+  @include button;
+  font-family: "Droid Sans", sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  text-align: left;
+  border: 0;
+  width: 100%;
+  margin: 0 .5em .625em 0;
+  padding-left: 55px;
+  max-width: 250px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:before {
+    content: "";
+    font-family: 'responsive';
+    font-weight: 400;
+    text-align:center;
+    width:44px;
+    height: 100%;
+    font-size: 1.25em;
+    line-height: 2em;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &:last-of-type {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+a.login-button-facebook {
+  color: #fff;
+  background: $facebook-color;
+  &:hover, &:active {
+    color: #fff;
+    background: lighten($facebook-color,15);
+  }
+  &:before {
+    content: "\e603";
+    background: lighten($facebook-color,15);
+  }
+}
+
+a.login-button-twitter {
+  color: #fff;
+  background: $twitter-color;
+  &:hover, &:active {
+    color: #fff;
+    background: lighten($twitter-color,15);
+  }
+  &:before, &:active {
+    content: "\e605";
+    background: lighten($twitter-color,15);
+  }
+}

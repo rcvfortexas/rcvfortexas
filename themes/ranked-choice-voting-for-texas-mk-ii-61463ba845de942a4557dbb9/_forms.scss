@@ -1,0 +1,362 @@
+// bootsrap forms
+
+form {
+  padding: 0;
+  margin: 0; }
+
+label, input, button, select, textarea {
+  font: 14px/14px 'Droid Sans';
+  letter-spacing: 0.5px;
+  font-weight: normal;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  margin-bottom: 12px;
+  max-width: 100%;
+}
+
+input[type="file"] {
+  box-shadow: none;
+  margin: 10px 0 15px 0;
+  line-height: 1;
+  padding: 0;
+  background-color: transparent;
+  border: none; }
+
+textarea {
+  min-height: 70px;
+  height: 70px;
+  width: 100%; }
+
+.input_checkbox {
+  input {
+    margin-right: 5px !important;
+    float: left;
+    width: auto; } }
+
+hr {
+  margin: 25px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff; }
+
+select, textarea, input {
+  @include border-radius(3px);
+  box-shadow: #fff 1px 1px 0;
+  border: 1px solid #ccc;
+  background: #e2e2e2;
+  color: #333;
+  margin: 0 0 10px;
+  padding: 7px 13px;
+  line-height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+select:focus, textarea:focus, input:focus {
+  // border-color: $theme-color-3;
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $theme-color-2h;
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $theme-color-2h;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $theme-color-2h;
+}
+
+select {
+  height: 34px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  /* IE8-9 */
+  line-height: normal;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+}
+
+input[type="radio"] {
+  -webkit-appearance: radio;
+}
+
+// prevents iOS from adding unwanted styles on submit buttons
+
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  margin: 0 4px 0px -20px;
+  padding: 0;
+  display: inline-block;
+  vertical-align: 5%;
+}
+
+.radio-inline, .checkbox-inline {
+  input[type="radio"], input[type="checkbox"] {
+    display: none;
+  }
+  input[type="radio"]:checked+label, input[type="checkbox"]:checked+label {
+    background-color: $theme-color-1;
+    color: #fff;
+  }
+  label.radio, label.checkbox {
+    .option_label {
+      display: block;
+    }
+    @include border-radius(5px);
+    background-color: #c6c6c6;
+    color: #fff;
+    text-shadow: none;
+    padding: .5em .1em .625em .1em;
+    font-family: $swap-font;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    min-width: 80px;
+    font-weight: bold;
+    margin: 5px 5px 10px 0;
+    cursor: pointer;
+    outline: none;
+  }
+  label.checkbox {
+    padding: 5px;
+    height: 30px;
+    font-size: 16px;
+    margin: 5px 5px 0 0;
+  }
+  &.checkbox-inline {
+    vertical-align: middle;
+    li {
+      width: 100%;
+      vertical-align: middle;
+      label {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.controls > .radio:first-child,
+.controls > .checkbox:first-child {
+  padding-top: 5px;
+}
+
+.inline-labels, .inline-radios {
+  input {
+    vertical-align: top;
+  }
+  label {
+    display: inline-block;
+    padding-left: 4px;
+    text-align: left;
+    &.checkbox {
+      padding-left: 0;
+    }
+  }
+}
+
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+  margin-left: 10px;
+}
+
+.checkbox, .radio {
+  margin-left: 20px;
+}
+
+// container which wraps every form
+
+.form-wrap, .form_wrap {
+  @include border-radius(2px);
+  box-shadow: #cfcfcf 0 0 3px;
+  background: #f3f3f3;
+  border: 3px solid #fff;
+  margin: 10px 0 0;
+  padding: 18px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.form-submit,
+.form_submit {
+  font-size: 12px;
+}
+
+.form_submitting {
+  img {
+    margin-right: 6px;
+  }
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+// expands all input fields to 100%
+
+.form-wrap, form {
+  .text {
+    width: 100%;
+  }
+  label {
+    color: #000;
+    font: 14px/22px 'Crete Round';
+    letter-spacing: .25px;
+  }
+}
+
+// inline sign in form
+
+.user-session-form-container {
+  margin-top: 10px;
+  h4 {
+    margin-bottom: 10px;
+  }
+  .social-login {
+    float: left;
+    width: 200px;
+  }
+  .session-form {
+    float: left;
+    width: 200px;
+  }
+  input[type="email"], input[type="password"], input.text {
+    width: 100%
+  }
+  .or-create-account {
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 0 15px 0 0;
+  }
+  .email-sign-in {
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 10px 15px 0 15px; }
+  .post-comment {
+    margin-right: 4px;
+  }
+  .errors {
+    list-style-type: none;
+    font-size: 12px;
+    margin-left: 0;
+    margin-top: 0;
+    line-height: 25px;
+    display: none;
+  }
+}
+
+
+// form error messages
+
+.aware-theme.v2-theme .form-errors {
+
+  display: block;
+  padding: 0;
+  > * {
+    margin: 10px;
+  }
+  ul, li {
+    padding: 5px;
+    list-style: none;
+  }
+}
+
+.form-error {
+  color: $red;
+  font-size: .8em;
+}
+
+.form-wrap input.error {
+  border-color: rgba(255, 0, 0, 0.6);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  margin-bottom: 3px;
+}
+
+.error-message {
+  font-size: 0.8em;
+  color: red;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.warning, #errorExplanation, #content .warning, #content #errorExplanation {
+  @include border-radius(2px);
+  background-color: $red;
+  color: #fff;
+  padding: 10px;
+  margin: 0 0 15px 0;
+  font-size: 13px;
+  text-shadow: none;
+  line-height: 17px;
+  h2 {
+    color: #fff;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 10px;
+  }
+}
+
+// NationBuilder Payments
+
+.StripeElement {
+  @include border-radius(3px);
+  box-shadow: #fff 1px 1px 0;
+  border: 1px solid #ccc;
+  background: #e2e2e2;
+  padding: 7px 13px;
+  line-height: 18px;
+}
+.StripeElement--focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+.page-type-nation-signup {
+  .payments-container {
+    min-height: 86px;
+    margin-bottom: 10px;
+  }
+  .card-error-container {
+    padding-top: 5px;
+    .card-error {
+      position: absolute;
+    }
+  }
+}
