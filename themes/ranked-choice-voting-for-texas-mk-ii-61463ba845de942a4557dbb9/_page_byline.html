@@ -1,0 +1,14 @@
+<div class="byline-wrap">
+	<div class="byline">
+		Posted by {{ page.author.published_name_linked }} <span class="pc">{{ page.author.capital_amount_format }}</span> on {{ page.published_at | date: '%B %d, %Y' }}
+		{% if site.has_rule_page? and request.logged_in? %}&middot; <a href="{{ page.flag_url }}" class="flag">Flag</a>{% endif %}
+
+		{% if page.show_stream? %}
+		{% if post.public_activities_count > 0 %}
+		&middot; <a href="{{ page.url }}#addreaction">{{ page.public_activities_count }} reaction{% if page.public_activities_count > 1 %}s{% endif %}</a>
+		{% else %}
+		&middot; <a href="{{ page.url }}#addreaction">Add your reaction</a>
+		{% endif %}
+		{% endif %}
+	</div>
+</div>
