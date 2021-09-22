@@ -3021,9 +3021,9 @@ hr.orsignin-before {
 // Donation v2 page
 //-------------------------------------------
 .page-pages-show-donation-v2-wide {
-  .social-nav {
-    display: none;
-  }
+  // .social-nav {
+  //   display: none;
+  // }
   &.has-background-image .header-container {
     background: none;
   }
@@ -3049,9 +3049,9 @@ hr.orsignin-before {
   .main.width-container {
     background: transparent;
   }
-  .footer-nav {
-    display: none;
-  }
+  // .footer-nav {
+  //   display: none;
+  // }
   .card-error {
     @extend .red !optional;
     padding-top: 5px;
@@ -3070,7 +3070,7 @@ hr.orsignin-before {
     margin-bottom: 0;
   }
   .onecolumn-container {
-    width: 520px;
+    // width: 520px;
     background: #fff;
   }
   #content .form-wrap .row-fluid {

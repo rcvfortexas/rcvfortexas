@@ -91,14 +91,11 @@
         </div>
         <!-- .header-container -->
 
-
-        {% unless page.type_name == "Donation (v2)" %}
         {% if site.has_header_image? and page.features_count == 0 %}
         <div class="width-container">
          <img src="{{ site.header_image_url_1026 }}" class="header-image" border="0" />
         </div>
         {% endif %}
-        {% endunless %}
 
         {% if page.features_count > 0 %}
           <div class="width-container">
