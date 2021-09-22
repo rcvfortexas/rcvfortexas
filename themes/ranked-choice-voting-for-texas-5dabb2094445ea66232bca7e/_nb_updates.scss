@@ -22,9 +22,9 @@
   .main.width-container {
     background: transparent;
   }
-  // .footer-nav {
-  //   display: none;
-  // }
+  .footer-nav {
+    display: none;
+  }
   .card-error {
     @extend .red;
     padding-top: 5px;
