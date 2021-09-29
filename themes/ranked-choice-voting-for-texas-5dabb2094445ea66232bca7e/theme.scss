@@ -295,6 +295,12 @@ h6 {
       line-height: .7em;
       margin-left: -50px;
     }
+    &.blockquote-no-pseudo-content {
+      padding-left: 30px;
+      &:before {
+        content: none;
+      }
+    }
   }
   p {
     line-height: 24px;
