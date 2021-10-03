@@ -884,14 +884,14 @@ nav {
 .donate-type-selector {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
   
   .donate-type-button {
     @include border-radius(24px);
     display: inline-block;
-    // position: relative;
+    padding: 5px 25px;
     width: 150px;
-    @include border-radius-top-left(0px);
-    @include border-radius-bottom-left(0px);
+    cursor: pointer;
     &.disabled {
       opacity: 0.45;
     }
@@ -902,10 +902,22 @@ nav {
     // text-align: center;
     text-shadow: lighten($participate-submit-color, 10) 0 -1px;
     border: 1px solid #aeaeae;
+    ul {
+      padding-inline-start: 22px;
+    }
+    h4 {
+      color: white;
+      font-size: 16px;
+    }
     &.active {
       background: #023b5e;
       color: white;
       border: 1px solid transparent;
+      cursor: none;
+      pointer-events: none;
+      h4 {
+        color: black;
+      }
     }
     &:hover {
       background: lighten($participate-submit-color, 15);
@@ -918,9 +930,22 @@ nav {
     font-style: italic;
     text-transform: uppercase;
     font-size: 18px;
-    margin: 8px;
+    margin: 8px 15px;
   }
 
+}
+
+// for flowing text around image
+.float-img-right {
+  float: right;
+  text-align: center;
+  padding: 5px;
+}
+
+.float-img-left {
+  float: left;
+  text-align: center;
+  padding: 5px;
 }
 
 // activities shown at the bottom of a page, if turned on
