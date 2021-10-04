@@ -898,15 +898,23 @@ nav {
     background: white;
     float: none;
     margin: 0;
-    // text-align: center;
-    text-shadow: lighten($participate-submit-color, 10) 0 -1px;
     border: 1px solid #aeaeae;
+    .donate-type-heading {
+      font-family: $swap-font;
+      font-size: 18px;
+      line-height: 32px;
+      font-weight: bold;
+      border-bottom: 1px solid black;
+    }
     ul {
       padding-inline-start: 22px;
+      margin-top: 8px;
+      margin-bottom: 10px;
       li {
         font-family: $swap-font;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 32px;
+        font-weight: normal;
       }
     }
     &.active {
@@ -915,11 +923,12 @@ nav {
       border: 1px solid transparent;
       cursor: none;
       pointer-events: none;
+      .donate-type-heading {
+        border-bottom: 1px solid white;
+      }
     }
     &:hover {
-      background: lighten($participate-submit-color, 15);
-      // border-top: 1px solid lighten($participate-submit-color, 20);
-      text-shadow: lighten($participate-submit-color, 10) 0 -1px;
+      background: lighten($participate-submit-color, 35);
     }
   }
 
@@ -927,7 +936,7 @@ nav {
     font-style: italic;
     text-transform: uppercase;
     font-size: 18px;
-    margin: 8px 15px;
+    margin: 8px 20px;
   }
 
 }
