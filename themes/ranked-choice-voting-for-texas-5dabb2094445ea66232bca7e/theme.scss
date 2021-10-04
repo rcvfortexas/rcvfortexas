@@ -889,8 +889,8 @@ nav {
   .donate-type-button {
     @include border-radius(24px);
     display: inline-block;
-    padding: 5px 25px;
-    width: 150px;
+    padding: 10px 25px;
+    // width: 150px;
     cursor: pointer;
     &.disabled {
       opacity: 0.45;
@@ -898,16 +898,16 @@ nav {
     background: white;
     float: none;
     margin: 0;
-    padding: 12px 12px 0 12px;
     // text-align: center;
     text-shadow: lighten($participate-submit-color, 10) 0 -1px;
     border: 1px solid #aeaeae;
     ul {
       padding-inline-start: 22px;
-    }
-    h4 {
-      color: white;
-      font-size: 16px;
+      li {
+        font-family: $swap-font;
+        font-size: 14px;
+        line-height: 32px;
+      }
     }
     &.active {
       background: #023b5e;
@@ -915,9 +915,6 @@ nav {
       border: 1px solid transparent;
       cursor: none;
       pointer-events: none;
-      h4 {
-        color: black;
-      }
     }
     &:hover {
       background: lighten($participate-submit-color, 15);
