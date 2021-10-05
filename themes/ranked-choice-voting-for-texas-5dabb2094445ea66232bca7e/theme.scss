@@ -902,26 +902,28 @@ nav {
   .donate-type-button {
     @include border-radius(24px);
     display: inline-block;
-    padding: 10px 25px;
+    padding: 15px 25px;
     min-width: 220px;
     cursor: pointer;
     letter-spacing: normal;
     text-align: center;
-    box-shadow: 0px 4px 8px rgb(0 0 0 / 35%);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
     &.disabled {
       opacity: 0.45;
     }
     background: white;
     color: $theme-color-1;
+    font-family: $swap-font;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: normal;
+    text-shadow: none;
     float: none;
     margin: 0 15px 15px 10px;
     border: 1px solid #aeaeae;
     .donate-type-heading {
-      font-family: $swap-font;
       font-size: 16px;
-      line-height: 32px;
-      font-weight: normal;
-      text-shadow: none;
+      line-height: 24px;
     }
     ul {
       padding-inline-start: 22px;
@@ -935,21 +937,12 @@ nav {
         text-shadow: none;
       }
     }
-    hr {
-      height: 1px;
-      background-color: #999;
-      border: none;
-      margin: 6px -8px 5px -8px;
-    }
     &.active {
       background: #023b5e;
       color: white;
       border: 1px solid transparent;
       cursor: none;
       pointer-events: none;
-      hr {
-        background-color: white;
-      }
     }
     &:hover {
       background: #cee9f0;  // was lighten($participate-submit-color, 15);

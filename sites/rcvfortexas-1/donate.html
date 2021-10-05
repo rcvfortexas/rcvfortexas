@@ -5,6 +5,25 @@
   	  <h2>{{ page.headline }}</h2>
   	</div>
   {% endif %}
+  <p class="donate-type-intro">Use my donation for:</p>
+  <div class="donate-type-selector">
+    <div>
+      <div class="donate-type-button active">
+        <div class="donate-type-heading">Education &amp; Outreach</div>
+        <div>Tax-deductible</div>
+        <div>501(c)(3)</div>
+      </div>
+    </div>
+    <div>
+      <a class="donate-link-noshadow" href="/donate_3">
+      <div class="donate-type-button">
+        <div class="donate-type-heading">Legislative Advocacy</div>
+        <div>Not tax-deductible</div>
+        <div>501(c)(4)</div>
+      </div>
+      </a>
+    </div>
+  </div>
   {% if page.donation_v2.content.size > 0 %}
   <div id="intro" class="intro">
     {{ page.donation_v2.content }}
