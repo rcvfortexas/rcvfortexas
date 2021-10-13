@@ -1,0 +1,184 @@
+{% if page.headline.size > 0 and page.is_homepage? == false %}
+<h2 class="headline">{{ page.headline }}</h2>
+{% endif %}
+
+<div id="content">
+
+  {% if page.is_homepage? == true %}
+
+  <div id="intro" class="intro featured-content">
+    <h2><span>{{ page.headline }}</span></h2>
+    <div class="about-blurb">{{ page.basic.content }}</div>
+  </div>
+
+  {% else %}
+
+  <div id="intro" class="intro">
+    <div class="text-content">
+      {{ page.basic.content }}
+    </div>
+  </div>
+
+  {% endif %}
+
+  <div>
+    <form class="row-fluid form-wrap">
+      <input id="address" class="text" type="text" name="address" value="" placeholder="Enter Your Texas Address">
+      <button id="getRepresentative" class="button" type="button" name="button">Get your represenatives</button>
+    </form>
+    <div id="errorWrongState" class="form-error errors" style="display:none;">
+      Please enter a Texas address.
+    </div>
+    <div id="errorUnknownAddress" class="form-error errors" style="display:none;">
+      Sorry, we didn't understand that address. Please enter a valid Texas address.
+    </div>
+    <div id="errorUnknown" class="form-error errors" style="display:none;">
+      Sorry, something went wrong. Please try again later.
+    </div>
+  </div>
+  <br/>
+  <div id="results" style="display:none;">
+    <div class="">Here are the legislators for</div>
+    <div id="resultsAddress"></div>
+    <hr/>
+    <div>Texas State Senator</div>
+    <div id="txSenate"></div>
+    <hr/>
+    <div>Texas State Representative</div>
+    <div id="txHouse"></div>
+    <hr/>
+    <div>US Senators</div>
+    <div id="usSenate"></div>
+    <hr/>
+    <div>US Representative</div>
+    <div id="usHouse"></div>
+  </div>
+
+  {% if page.tags_count > 0 %}
+  <div class="page-tags">
+    {% include "page_tags" with page %}
+  </div>
+  {% endif %}
+
+  {% if page.is_homepage? == true and site.page_tags contains "homepage" %}
+    {% tag "homepage" with "homepage_widget" %}
+  {% endif %}
+
+  {% comment %}
+  <div class="like-page">
+    <strong>Do you like this page?</strong>
+    {% include "like_page" %}
+  </div>
+  {% endcomment %}
+
+  {% if page.show_stream? %}
+  {% include "page_stream" %}
+  {% endif %}
+
+</div>
+<script type="text/javascript">
+  function getOfficialIndices(title, offices) {
+    var officialIndices;
+    offices.forEach(function(office) {
+      if (office.name === title) {
+        officialIndices = office.officialIndices;
+      }
+    })
+
+    return officialIndices;
+  }
+
+  function displayOfficial(offices, officials, officialTitle, $div) {
+    var officialIndices = getOfficialIndices(officialTitle, offices);
+    $div.empty();
+    officialIndices.forEach(function(officialIndex) {
+      var official = officials[officialIndex];
+      if (official.urls && official.urls.length > 0) {
+        var $name = $('<div><a>' + official.name + '</a><div>');
+        $name.children().attr('href', official.urls[0]);
+      } else {
+        var $name = $('<div>' + official.name + '<div>');
+      }
+      $div.append($name);
+      if (official.emails && official.emails.length > 0) {
+        var $email = $('<div><a>' + official.emails[0] + '</a><div>');
+        $email.children().attr('href', 'mailto:' + official.emails[0]);
+        $div.append($email);
+      }
+      if (official.phones && official.phones.length > 0) {
+        var $phone = $('<div><a>' + official.phones[0] + '</a><div>');
+        $phone.children().attr('href', 'tel:' + official.phones[0]);
+        $div.append($phone);
+      }
+    })
+  }
+
+  /**
+   * Displays what google guesses is the user's address based on user input.
+   */
+  function showAddress(normalizedInput) {
+    var $addressDisplay = $('#resultsAddress');
+    $addressDisplay.empty();
+    var cityState = normalizedInput.city + ', ' + normalizedInput.state;
+    $addressDisplay.append('<div>' + normalizedInput.line1 + '</div>');
+    $addressDisplay.append('<div>' + cityState + '</div>');
+  }
+
+  function showRepresentatives(response) {
+    showAddress(response.normalizedInput);
+    displayOfficial(response.offices, response.officials, 'TX State Senator', $('#txSenate'));
+    displayOfficial(response.offices, response.officials, 'TX State Representative', $('#txHouse'));
+    displayOfficial(response.offices, response.officials, 'U.S. Senator', $('#usSenate'));
+    displayOfficial(response.offices, response.officials, 'U.S. Representative', $('#usHouse'));
+    $('#results').show();
+  }
+
+  function resetForm() {
+    var $button = $('#getRepresentative');
+    $button.prop('disabled', false);
+    var $input = $('#address');
+    $input.val('');
+    $input.attr('placeholder', 'Update Texas Address');
+  }
+
+  function handleResponse(data) {
+    if (data.normalizedInput.state === 'TX') {
+      showRepresentatives(data);
+    } else {
+      $('#errorWrongState').show();
+    }
+    resetForm();
+  }
+
+  function handleFailure(data) {
+    console.log(data.responseJSON);
+    if (data.responseJSON.error.code === 400) {
+      $('#errorUnknownAddress').show();
+    } else {
+      $('#errorUnknown').show();
+    }
+    resetForm();
+  }
+
+  function getRepresentativeInfoByAddress(address) {
+    $('#getRepresentative').prop('disabled',true);
+    $('.errors').hide();
+    // This api key has a restricted set of HTTP referrers.
+    // Check with Irene Foelschow if you need it updated.
+    var apiKey = 'AIzaSyAaRwLVjwQzJZPOxR-FplEAmQGRlzqImB0';
+    var endpoint = 'https://www.googleapis.com/civicinfo/v2/representatives';
+    var representativeRequest = encodeURI(endpoint + '?key=' + apiKey + '&address=' + address);
+    $.get(representativeRequest, handleResponse).fail(handleFailure);
+  }
+
+  function getRepresentative() {
+    var address = $('#address').val();
+    getRepresentativeInfoByAddress(address);
+  }
+
+  $(document).ready(function() {
+    var $getRepresentative = $('#getRepresentative');
+    $getRepresentative.click(getRepresentative);
+  });
+
+</script>
