@@ -24,16 +24,28 @@
   <div>
     <form class="row-fluid form-wrap">
       <input id="address" class="text" type="text" name="address" value="" placeholder="Enter Your Texas Address">
-      <button id="getRepresentative" class="button" type="button" name="button">Get your represenatives</button>
+      <button id="getRepresentative" class="button" type="button" name="button">Get your representatives</button>
     </form>
-    <div id="errorWrongState" class="form-error errors" style="display:none;">
-      Please enter a Texas address.
+    <div id="errorWrongState" class="form-errors errors" style="display:none;">
+      <ul>
+        <li>
+          Please enter a Texas address.
+        </li>
+      </ul>
     </div>
-    <div id="errorUnknownAddress" class="form-error errors" style="display:none;">
-      Sorry, we didn't understand that address. Please enter a valid Texas address.
+    <div id="errorUnknownAddress" class="form-errors errors"style="display:none;">
+      <ul>
+        <li>
+          Sorry, we didn't understand that address. Please enter a valid Texas address.
+        </li>
+      </ul>
     </div>
-    <div id="errorUnknown" class="form-error errors" style="display:none;">
-      Sorry, something went wrong. Please try again later.
+    <div id="errorUnknown" class="form-errors errors" style="display:none;">
+      <ul>
+        <li>
+          Sorry, something went wrong. Please try again later.
+        </li>
+      </ul>
     </div>
   </div>
   <br/>
@@ -94,7 +106,7 @@
     officialIndices.forEach(function(officialIndex) {
       var official = officials[officialIndex];
       if (official.urls && official.urls.length > 0) {
-        var $name = $('<div><a>' + official.name + '</a><div>');
+        var $name = $('<div><a target="_blank">' + official.name + '</a><div>');
         $name.children().attr('href', official.urls[0]);
       } else {
         var $name = $('<div>' + official.name + '<div>');
