@@ -165,7 +165,7 @@
     $('.errors').hide();
     // This api key has a restricted set of HTTP referrers.
     // Check with Irene Foelschow if you need it updated.
-    var apiKey = 'AIzaSyAaRwLVjwQzJZPOxR-FplEAmQGRlzqImB0';
+    var apiKey = 'AIzaSyANuiWDhA-_uYcKmH9i5Iz26uQECFOR55g';
     var endpoint = 'https://www.googleapis.com/civicinfo/v2/representatives';
     var representativeRequest = encodeURI(endpoint + '?key=' + apiKey + '&address=' + address);
     $.get(representativeRequest, handleResponse).fail(handleFailure);
