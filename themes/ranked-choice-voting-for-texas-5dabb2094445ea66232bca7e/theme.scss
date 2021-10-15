@@ -885,6 +885,98 @@ nav {
   }
 }
 
+// donate page selector
+
+.donate-type-intro {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.donate-type-selector {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .donate-link-noshadow {
+    text-shadow: none;
+    display: block;
+  }
+  
+  .donate-type-button {
+    @include border-radius(24px);
+    display: inline-block;
+    padding: 15px 25px;
+    min-width: 220px;
+    cursor: pointer;
+    letter-spacing: normal;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+    &.disabled {
+      opacity: 0.45;
+    }
+    background: white;
+    color: $theme-color-1;
+    font-family: $swap-font;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: normal;
+    text-shadow: none;
+    float: none;
+    margin: 0 15px 15px 10px;
+    border: 1px solid #aeaeae;
+    .donate-type-heading {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    ul {
+      padding-inline-start: 22px;
+      margin-top: 0px;
+      margin-bottom: 2px;
+      li {
+        font-family: $swap-font;
+        font-size: 13px;
+        line-height: 24px;
+        font-weight: normal;
+        text-shadow: none;
+      }
+    }
+    &.active {
+      background: #023b5e;
+      color: white;
+      border: 1px solid transparent;
+      cursor: none;
+      pointer-events: none;
+    }
+    &:hover {
+      background: #cee9f0;  // was lighten($participate-submit-color, 15);
+    }
+  }
+
+  .between-options {
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 8px 20px 20px 20px;
+  }
+
+}
+
+// for flowing text around image
+.float-img-right {
+  float: right;
+  text-align: center;
+  padding: 10px;
+}
+
+.float-img-left {
+  float: left;
+  text-align: center;
+  padding: 10px;
+}
+
 // activities shown at the bottom of a page, if turned on
 
 .activities {
@@ -3071,6 +3163,7 @@ hr.orsignin-before {
     color: #003e68;
     border-bottom: 2px solid #e7e7e7;
     margin-bottom: 30px;
+    padding-top: 20px;
   }
   .header-container {
     margin-bottom: 0;
