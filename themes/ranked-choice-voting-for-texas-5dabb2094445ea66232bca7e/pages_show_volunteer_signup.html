@@ -1,3 +1,5 @@
+{% include "breadcrumbs" %}
+
 {% if page.headline.size > 0 %}
 <h2 class="headline">{{ page.headline }}</h2>
 {% endif %}
@@ -46,43 +48,16 @@
 
       <div class="form-errors">{% error_messages_for volunteer_signup %}</div>
 
-      {% comment %}
-        Liquid doesn't allow you to initialize arrays or edit strings, but it
-        does have this weird capture feature that's annoyingly sensitive to
-        spaces. We're making due with what we've got.
-      {% endcomment %}
-
-      {% capture categories %}{% for volunteer_type in page.volunteer_signup.volunteer_types %}{% assign volunter_category = volunteer_type.name | split: " - " %}{% if volunter_category.size > 1 %}{{ volunter_category[0] }},{% endif %}{% endfor %}{% endcapture %}
-
-      {% assign categories_list = categories | split: "," %}
-      {% assign unique_categories = categories_list | uniq %}
-
-      {% comment %}
-        Group checkboxes by volunteer category.
-      {% endcomment %}
-
       <div class="volunteer-signup-types">
-      {% for category in unique_categories %}
-        {% if category != " " %}
-        <div class="padtop">
-          {{ category }}
+        {% for volunteer_type in page.volunteer_signup.volunteer_types %}
+        <div class="row-fluid">
+          <div class="span12"><label class="checkbox">
+            {% check_box_tag 'volunteer_signup[volunteer_type_ids][]', volunteer_type.id, collection:volunteer_signup.volunteer_type_ids, member:volunteer_type.id, class:"checkbox" %}
+            {{ volunteer_type.name }}
+          </label></div>
         </div>
-          {% for volunteer_type in page.volunteer_signup.volunteer_types %}
-            {% if volunteer_type.name contains category %}
-          <div class="row-fluid">
-            <div class="span12"><label class="checkbox">
-              {% assign volunter_category = volunteer_type.name | split: " - " %}
-              {% assign volunteer_category_to_remove = volunter_category[0] | append: " - " %}
-              {% check_box_tag 'volunteer_signup[volunteer_type_ids][]', volunteer_type.id, collection:volunteer_signup.volunteer_type_ids, member:volunteer_type.id, class:"checkbox" %}
-              {{ volunteer_type.name | remove_first: volunteer_category_to_remove }}
-            </label></div>
-          </div>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
+        {% endfor %}
       </div>
-
       {% hidden_field_tag 'volunteer_signup[volunteer_type_ids][]', '' %}
 
       {% if request.sorta_logged_in? == false or request.current_signup.has_name? == false %}
@@ -153,7 +128,6 @@
         </div>
       </div>
 
-      {% comment %}
       {% if site.ask_to_publish_to_stream? %}
       <div class="row-fluid">
         <div class="span12">
@@ -161,7 +135,6 @@
         </div>
       </div>
       {% endif %}
-      {% endcomment %}
 
       {% if page.show_consent_form? %}
       {% include "consent_form" %}

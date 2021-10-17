@@ -1,3 +1,4 @@
+{% unless page.type_name == "Donation (v2a)" %}
 <nav id="menu" role="navigation">
   <ul id="topnav" class="topnav desktop-nav">
     {% for child in site.root_nav_pages %}
@@ -33,3 +34,4 @@
 </nav>
 
 <a href="#menu" class="menu-link"><i class="icon-menu"></i></a>
+{% endunless %}

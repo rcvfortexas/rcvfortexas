@@ -6,14 +6,14 @@
 //* style variables *//
 
 // main theme colors
-$theme-color-1: #005d99;
+$theme-color-1: #c41230;
 $theme-color-1h: lighten($theme-color-1, 10);
-$theme-color-2: #aa935a;
+$theme-color-2: #0075a1;
 $theme-color-2h: lighten($theme-color-2, 10);
 $theme-color-3: #d6d6d6;
-$theme-color-4: #fafafa;
+$theme-color-4: #f4f4f4;
 $theme-color-5: #333;
-$theme-color-6: #082b4b;
+$theme-color-6: #145e8d;
 $theme-callout: true;
 
 // supporter nav
@@ -21,38 +21,40 @@ $supporter-nav-on: darken($theme-color-4, 30);
 $supporter-nav-hover: darken($theme-color-4, 10);
 
 //main nav
-$bg-nav-link: #dfdfdf;
-$bg-nav-link_hover: #f4f4f4;
-$bg-nav-border-link: #002d51;
-$nav-link-color: #383333;
-$nav-link-color-hover: lighten($nav-link-color, 10);
-$nav-link-text-shadow: #fff;
-$nav-link-text-shadow-hover: #fff;
+$bg-nav-link: #008fc5;
+$bg-nav-link_hover: #36a6dd;
+$bg-nav-border-link: #0e96d0;
+$nav-link-color: #fff;
+$nav-link-color-hover: #fff;
+$nav-link-text-shadow: #005885;
+$nav-link-text-shadow-hover: #26769d;
 $nav-link-color-mobile: #fff;
-$nav-link-text-shadow-mobile: rgba(0, 0, 0, 0);
-$bg-nav-link-active: #b0995c;
-$bg-nav-link-active-hover: lighten($bg-nav-link-active, 10);
-$bg-nav-border-link-active: #002d51;
-$nav-link-color-active: #ede6d5;
+$nav-link-text-shadow-mobile: #005885;
+$bg-nav-link-active: #c41230;
+$bg-nav-link-active-hover: #ff173e;
+$bg-nav-link-special: #3399ff;
+$bg-nav-link-special2: #054d99;
+$bg-nav-border-link-active: #c41230;
+$nav-link-color-active: #fff;
 $nav-link-color-active-hover: #fff;
-$nav-link-text-shadow-active: #998343;
-$nav-link-text-shadow-active-hover: #998343;
+$nav-link-text-shadow-active: #8d0103;
+$nav-link-text-shadow-active-hover: #c41230;
 
 // social nav
-$social_nav_icon_background: #1670a2;
-$social_nav_icon_hover_background: #1fa4e2;
-$social_nav_icon_shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+$social_nav_icon_background: #fff;
+$social_nav_icon_hover_background: #349fba;
+$social_nav_icon_shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
 
 //footer nav link
-$footer-nav-link: #fff;
-$footer-nav-link-hover: #a5cee4;
-$footer-nav-link-text-shadow: #02324f;
+$footer-nav-link: #7eb0cc;
+$footer-nav-link-hover: #fff;
+$footer-nav-link-text-shadow: #00355a;
 $footer-nav-link-active: #fff;
-$footer-nav-link-bg-active: #bca363;
-$footer-nav-link-border-active: #978350;
-$footer-nav-link-text-shadow-active: #978350;
-$footer-nav-link-bg-active-hover: darken($footer-nav-link-bg-active, 10);
-$footer-nav-link-text-shadow-active-hover: #978350;
+$footer-nav-link-bg-active: #c41230;
+$footer-nav-link-border-active: #c41230;
+$footer-nav-link-text-shadow-active: #8d0103;
+$footer-nav-link-bg-active-hover: #ff173e;
+$footer-nav-link-text-shadow-active-hover: #990e25;
 
 // fonts
 $font: "Droid Serif", serif;
@@ -63,49 +65,49 @@ $swap-font: "Crete Round", serif;
 $swap-font-2: "Crete Round", serif;
 
 //homepage changes
-$blog-feed: #333;
-$blog-feed-text-shadow: #fff;
-$border-postlist-color: #bca363;
-$participate-box-border: #e4dac2;
-$participate-border-form-color: #c9c0ab;
-$participate-getinv-color: #005d99;
-$participate-getinv-tshadow: #fff;
-$participate-submit-color: #005d99;
-$participate-h4-spancolor: #000;
-$widget-border-bottom: #003356;
+$blog-feed: #fff;
+$blog-feed-text-shadow: #4284a8;
+$border-postlist-color: #7eb0cc;
+$participate-box-border: #2d76a4;
+$participate-border-form-color: #00446a;
+$participate-getinv-color: #b1e4ff;
+$participate-getinv-tshadow: #014369;
+$participate-submit-color: #c41230;
+$participate-h4-spancolor: #00446a;
+$widget-border-bottom: #005c89;
 
 // images
-$nav-arrow: "nav_arrow_4.png";
-$site-bg: "bg_2.png";
+$nav-arrow: "nav_arrow.png";
+$site-bg: "bg.png";
 $share-bt-color: #fff;
-$share-bt: linear-gradient(to bottom, #538da9 0%, #115685 4%, #0a3162 100%);
-$share-bt-hover: linear-gradient(to bottom, #1777b3 0%, #1469a8 4%, #0e468a 100%);
-$bg-color-header: #023b5e;
-$bg-header: "bg_header_4.png";
-$bg-header-border: "bg_header_border_4.png";
+$share-bt: linear-gradient(to bottom, #4db8d8 0%, #1d93c2 4%, #1673b0 100%);
+$share-bt-hover: linear-gradient(to bottom, #4bbbe0 0%, #20a3da 4%, #1984cc 100%);
+$bg-color-header: #0b77a6;
+$bg-header: "bg_header.png";
+$bg-header-border: "bg_header_border.png";
 $wrapper-border-color: "rgba(0,0,0,.1)";
-$footer-bg: "bg_footer_4.png";
-$site-logo-bg: "site-logo-bg_4.png";
-$bg-social-header: "bg_social-header_4.png";
-$arrow-left: "arrow-prev_4.png";
-$arrow-right: "arrow-next_4.png";
-$participate-bg-top: "bg_participate-box-top_4.jpg";
-$participate-bg-bottom: "bg_participate-box_4.jpg";
-$participate-bg-shadow-top: none;
-$participate-bg-shadow-bottom: none;
-$bg-title-blog: "bg_title-blog-h_4.jpg";
+$footer-bg: "bg_footer.png";
+$site-logo-bg: "site-logo-bg.png";
+$bg-social-header: "bg_social-header.png";
+$arrow-left: "arrow-prev.png";
+$arrow-right: "arrow-next.png";
+$participate-bg-top: "bg_x-1277965612.jpg";  //"istockphoto-967788794-1024x1024.jpg"; // was "bg_participate-box-top.jpg";
+$participate-bg-bottom: "bg_participate-box.jpg";
+$participate-bg-shadow-top: 0 20px 20px -10px rgba(0, 0, 0, 0.2) inset;
+$participate-bg-shadow-bottom: 0 0px 20px 10px rgba(0, 0, 0, 0.2);
+$bg-title-blog: "bg_title-blog-h.png";
 $bg-title-wid-left: "h3-navy-glyph-left.png";
 $bg-title-wid-right: "h3-navy-glyph-right.png";
-$bg-title-blog-wid-left: "h3-glyphs-grey-left.png";
-$bg-title-blog-wid-right: "h3-glyphs-grey-right.png";
-$logo-wrap: "logo-wrap_4.png";
+$bg-title-blog-wid-left: "h3-skyblue-glyph-left.png";
+$bg-title-blog-wid-right: "h3-skyblue-glyph-right.png";
+$logo-wrap: "logo-wrap.png";
 
 //footer color changes
 $copy-color: #a1a1a1;
-$copy-link-color: #bca363;
-$sitename-bg: #034b78;
-$sitename-color: #fff;
-$sitename-text-shadow: #193d53;
+$copy-link-color: $theme-color-2;
+$sitename-bg: #a1c6db;
+$sitename-color: #01456b;
+$sitename-text-shadow: #d1e3ed;
 
 // border-radius mixin
 @import "border_radius";
@@ -174,8 +176,7 @@ header {
 }
 
 .header-container {
-  // background: url(header-light.png) no-repeat center bottom, url($bg-header-border) repeat-x top left, url($bg-header) repeat $bg-color-header;
-  background-color: #023B5E !important;
+  background: url(header-light.png) no-repeat center bottom, url($bg-header-border) repeat-x top left, url($bg-header) repeat $bg-color-header;
   background-size: auto auto, 70px 5px, auto 195px;
   padding: 0 0 23px 0;
   margin-bottom: 0;
@@ -310,9 +311,9 @@ nav, .subnav {
   border-top: 0;
   float: right;
   height: auto;
-  margin-top: 25px;
-  margin-left: 265px;
-  padding-right: 75px;
+  margin-top: 60px; // was 25px;
+  margin-left: 220px;   // was 265px;
+  padding-right: 6px;  // was 75px;
   position: static;
   width: auto;
   .topnav {
@@ -334,9 +335,6 @@ nav, .subnav {
       height: 100%;
       padding: 0 15px;
     }
-    &:last-child {
-      margin-right: 0;
-    }
   }
   /* controls bg color of top when hovering on sub */
   .sub {
@@ -352,6 +350,7 @@ nav, .subnav {
     min-width: 155px;
     display: none;
     max-height: none;
+    text-align: left;
     li {
       float: none;
       margin: 5px 0;
@@ -383,13 +382,20 @@ nav, .subnav {
       text-shadow: $nav-link-text-shadow 0 1px;
     }
   }
+  & > li:nth-last-child(1) {
+    &:not(.active) {
+      & > a {
+        background-color: $bg-nav-link-special2;
+      }
+    }
+  }
   & > li.drop > a {
     padding-right: 14px;
   }
 }
 
 .has-social-nav .topnav {
-  padding-right: 65px;
+  padding-right: 0px;  // was 65px;
 }
 
 // navigation shown if a page has more than one subpage
@@ -483,9 +489,9 @@ nav, .subnav {
 }
 
 .social-nav, .social-nav ul {
-  background: url($bg-social-header) no-repeat;
-  background-size: 110px auto;
-  width: 59px;
+  // background: url($bg-social-header) no-repeat;
+  // background-size: 110px auto;
+  // width: 59px;
 }
 
 .social-nav {
@@ -494,7 +500,7 @@ nav, .subnav {
   position: absolute;
   right:0;
   top:0;
-  width: 51px;
+  // width: 51px;
   ul {
     margin: 0;
     padding: 15px 0 0 0;
@@ -504,6 +510,8 @@ nav, .subnav {
     overflow: hidden;
     margin-bottom: 13px;
     li {
+      float: left;
+      padding-right: 8px;
       margin-bottom: 15px;
       &.fb a { background-position: 2px 0 }
       &.fb a:hover { background-position: 2px -33px }
@@ -512,9 +520,9 @@ nav, .subnav {
         color: $social_nav_icon_background;
         display: block;
         position: relative;
-        font-size: 22px;
-        height: 23px;
-        width: 27px;
+        font-size: 24px;
+        // height: 23px;
+        // width: 27px;
         margin: 0 auto;
         transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none; -webkit-transition: none;
         &:hover {
@@ -732,7 +740,7 @@ footer {
     }
   }
   .footer-social-nav {
-    width: 64px;
+    width: 130px;  // was 64px
     position: absolute;
     right: 0;
     top: 0;

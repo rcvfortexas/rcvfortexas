@@ -10,7 +10,7 @@
     {{ page.donation_v2.content }}
   </div>
   {% endif %}
-  
+
  {% assign thermo_width = 100 %}
 
     {% if page.donation_v2.has_amount_goal? %}
@@ -43,7 +43,7 @@
     </div>
 
     {% endif %}
-    
+
   {% form_for donation %}
 
   <div class="form-wrap">
@@ -324,7 +324,9 @@
           </div>
 
           {% if page.show_consent_form? %}{% include "consent_form" %}{% endif %}
-          
+
+          <div id="recaptcha_checkbox"></div>
+
           <div class="row-fluid">
             <div class="span12">
               <div class="submit-container">

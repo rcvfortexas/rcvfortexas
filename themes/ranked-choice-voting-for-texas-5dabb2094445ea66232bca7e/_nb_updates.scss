@@ -92,7 +92,13 @@
       position: relative;
     }
     input[type="radio"] {
-      display: none;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
     }
     label.radio {
       @include border-radius(5px);
@@ -277,7 +283,8 @@
             }
           }
           input[type="radio"] {
-            display: none;
+            opacity: 0;
+            position: absolute;
           }
           label.radio {
             @include border-radius(5px);
