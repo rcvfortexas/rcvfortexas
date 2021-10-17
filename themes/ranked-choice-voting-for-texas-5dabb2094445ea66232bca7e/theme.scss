@@ -1172,9 +1172,9 @@ nav {
       height: 110px; width: 866px;
       margin-bottom: 24px;
       // overflow: hidden;
-      & + li {
-        margin-left: 16px;
-      }
+      // & + li {
+      //   margin-left: 16px;
+      // }
       .helper {
         display: table;
         width: 100%;
@@ -1198,7 +1198,7 @@ nav {
     .cont .helper { background: url(bg_donate.jpg) no-repeat right 0 }
   }
   ul.top-news-list {
-    padding: 8px;
+    padding: 16px 8px;
     margin-inline-start: 12px;
     padding-inline-start: 20px;
     list-style-type: square;
@@ -3595,4 +3595,9 @@ hr.orsignin-before {
 	> * {
 		margin: 0 auto;
 	}
+}
+
+// for address input on Contact Elected Officials
+.max-w-txaddress {
+  max-width: 550px;
 }
