@@ -680,7 +680,7 @@ nav {
     and (min-width: 768px)
     and (max-width: 1024px) {
       // opacity: 0;
-      background: url(bg_header.png) repeat #145e8d;
+      background: url(bg_header.png) repeat $theme-color-6;
       .active & {
         opacity: 1;
         min-height: 100vh;
@@ -759,7 +759,7 @@ nav {
 // page layout if the sidebar is turned off
 
 .onecolumn-container {
-  padding: 45px 20px 30px;
+  padding: 35px 20px 30px;
   margin-bottom: 20px;
   background: #fff;
   .breadcrumbs {

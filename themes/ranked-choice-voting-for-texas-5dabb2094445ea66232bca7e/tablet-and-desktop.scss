@@ -33,7 +33,7 @@ $nav-link-text-shadow-mobile: #005885;
 $bg-nav-link-active: #c41230;
 $bg-nav-link-active-hover: #ff173e;
 $bg-nav-link-special: #3399ff;
-$bg-nav-link-special2: #054d99;
+// $bg-nav-link-special2: #054d99;
 $bg-nav-border-link-active: #c41230;
 $nav-link-color-active: #fff;
 $nav-link-color-active-hover: #fff;
@@ -199,7 +199,8 @@ header {
     float: left;
     text-align: left;
     padding: 18px 0 2px 0;
-    max-width: 27.875243664717%;
+    // max-width: 27.875243664717%;
+    max-width: 150px;
     margin-left: 0;
     background: transparent;
     display: block;
@@ -312,7 +313,7 @@ nav, .subnav {
   float: right;
   height: auto;
   margin-top: 60px; // was 25px;
-  margin-left: 220px;   // was 265px;
+  margin-left: 160px;   // was 265px;
   padding-right: 6px;  // was 75px;
   position: static;
   width: auto;
@@ -385,7 +386,7 @@ nav, .subnav {
   & > li:nth-last-child(1) {
     &:not(.active) {
       & > a {
-        background-color: $bg-nav-link-special2;
+        background-color: $theme-color-6;
       }
     }
   }
