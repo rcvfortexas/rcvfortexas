@@ -150,6 +150,7 @@
   </div>
   {% endif %}
 
+  {% comment %}
   {% if site.ask_to_publish_to_stream? %}
   <div class="row-fluid">
 
@@ -159,6 +160,7 @@
 
   </div>
   {% endif %}
+  {% endcomment %}
 
   {% if homepage_excerpt.petition.is_volunteer? and site.ask_for_volunteers? %}
   {% if request.sorta_logged_in? == false or request.current_signup.is_volunteer == false %}
