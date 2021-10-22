@@ -84,7 +84,7 @@
 
         <div class="main-container" id="middle">
           <div class="main width-container clearfix">
-            
+
             <div class="onecolumn-container clearfix">
 
             {{ content_for_notifications }}
@@ -115,7 +115,7 @@
               <p class="sitename"><a href="/">{{ site.name }}</a></p>
 
               {{ content_for_footer }}
-              
+
               <ul class="footer-nav clearfix">
                 {% for child in site.root_nav_pages %}
                 <li class="{% if child.is_or_is_ancestor_of_current_page? %}active{% endif %}">
@@ -152,7 +152,7 @@
                   <p>Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
                       href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.</p>
                 {% endif %}
-                <p>Created with <a href="http://nationbuilder.com/">NationBuilder</a></p>
+                <p>Created with <a href="{{ site.attribution_url }}">NationBuilder</a></p>
               </div>
             </div>
 

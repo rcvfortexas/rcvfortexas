@@ -1,3 +1,5 @@
+{% include "breadcrumbs" %}
+
 {% if page.headline.size > 0 %}
 <h2 class="headline">{{ page.headline }}</h2>
 {% endif %}
@@ -66,6 +68,7 @@
         {% if category != " " %}
         <div class="padtop">
           {{ category }}
+
         </div>
           {% for volunteer_type in page.volunteer_signup.volunteer_types %}
             {% if volunteer_type.name contains category %}
@@ -82,7 +85,6 @@
         {% endif %}
       {% endfor %}
       </div>
-
       {% hidden_field_tag 'volunteer_signup[volunteer_type_ids][]', '' %}
 
       {% if request.sorta_logged_in? == false or request.current_signup.has_name? == false %}

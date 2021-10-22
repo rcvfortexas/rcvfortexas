@@ -52,6 +52,8 @@
   <script type="text/javascript" src="staged-donations.js"></script>
   {% endif %}
 
+  <script src="https://kit.fontawesome.com/9fb048fa2c.js" crossorigin="anonymous"></script>
+
 </head>
 <body class="aware-theme v2-theme {{ page.page_class_name }} {% if page.is_homepage? == true %}homepage{% endif %} js">
   <div id="pattern" class="pattern">
@@ -65,7 +67,7 @@
 
             {% if site.has_meta_image? %}
               <div class="site-logo clearfix">
-                <header><a href="/"><img src="{{ site.meta_image_url }}"></a></header>
+                <header><a href="/"><img src="{{ site.meta_image_url }}" alt="{{ site.name }}" /></a></header>
               </div>
             {% else %}
               <header class="header-no-logo">
@@ -77,11 +79,13 @@
             <div class="social-nav">
               <ul>
                 {% if site.has_twitter? %}
-                <li><a target="_blank" href="{{ site.broadcaster.twitter_profile_url }}"><span class="icon-twitter"></span></a></li>
+                <li><a target="_blank" href="{{ site.broadcaster.twitter_profile_url }}"><i class="fab fa-twitter"></i></a></li>
                 {% endif %}
                 {% if site.has_facebook_page? %}
-                <li class="fb"><a target="_blank" href="{{ site.broadcaster.facebook_page_profile_url }}"><span class="icon-facebook-rounded"></span></a></li>
+                <li class="fb"><a target="_blank" href="{{ site.broadcaster.facebook_page_profile_url }}"><i class="fab fa-facebook"></i></a></li>
                 {% endif %}
+                <li><a target="_blank" href="https://www.linkedin.com/company/ranked-choice-voting-for-texas/"><i class="fab fa-linkedin"></i></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/rcvfortx/"><i class="fab fa-instagram"></i></a></li>
               </ul>
             </div><!-- / .social-nav -->
             {% endif %}
@@ -91,11 +95,14 @@
         </div>
         <!-- .header-container -->
 
+
+        {% unless page.type_name == "Donation (v2a)" %}
         {% if site.has_header_image? and page.features_count == 0 %}
         <div class="width-container">
          <img src="{{ site.header_image_url_1026 }}" class="header-image" border="0" />
         </div>
         {% endif %}
+        {% endunless %}
 
         {% if page.features_count > 0 %}
           <div class="width-container">
@@ -106,20 +113,15 @@
         <div class="main-container" id="middle">
           <div class="main width-container clearfix">
 
-            {% comment %}
             {% if page.is_homepage? == true %}
             {% if site.has_volunteer_page? or site.has_donation_page? or site.has_signup_page? %}
 
             <div class="participate">
 
+              <div class="top-content-cont">
               <div class="top-content">
 
-                <h2>
-                  <span> </span>
-                  <span> </span>
-                  <span> </span>
-                </h2>
-
+                {% comment %}
                 <ul class="row-fluid
 
                   {% if site.has_volunteer_page? %}
@@ -159,7 +161,7 @@
                   {% endif %}
 
                   {% if site.has_donation_page? %}
-                  <li class="cont  {% if site.has_volunteer_page? and site.has_signup_page? %}span4 {% elsif site.has_volunteer_page? or site.has_signup_page? %}span6 {% else %}span12{% endif %}">
+                  <li class="cont {% if site.has_volunteer_page? and site.has_signup_page? %}span4 {% elsif site.has_volunteer_page? or site.has_signup_page? %}span6 {% else %}span12{% endif %}">
 
                     <div class="helper"><h4><a href="{{ site.donation_page.url }}">{{ site.donation_page.headline }}</a></h4></div>
 
@@ -167,8 +169,20 @@
                   {% endif %}
 
                 </ul>
+                {% endcomment %}
+
+                <h3 class="home-hero-heading">Help bring ranked choice voting to Texas!</h3>
 
               </div><!-- / .top-content -->
+
+              <div class="top-right-content">
+                <h3>News</h3>
+                <ul class="top-news-list">
+                  <li>We're actively recruiting &mdash; <a href="/get-involved">volunteer today!</a></li>
+                  <li>Next event: Speaker Training. <a href="/calendar_2">View our event calendar.</a></li>
+                </ul>
+              </div>
+              </div>
 
               {% if site.has_signup_page? %}
               <div class="bottom-content row-fluid">
@@ -182,6 +196,9 @@
                   <a href="{{ request.current_signup.logout_url }}">sign out</a>.</p>
                 </div>
                 {% else %}
+                <div class="join-text">
+                  Join our email list: 
+                </div>
                 <div class="join-form span6">{% include "signup_form" with site.signup_page %}</div>
                 {% endif %}
               </div><!-- / .top-content -->
@@ -191,7 +208,6 @@
 
             {% endif %}
             {% endif %}
-            {% endcomment %}
 
             {% if request.is_sidebar? %}
             {% include "columns_2" %}
@@ -211,7 +227,7 @@
 
             <footer class="clearfix">
 
-              <p class="sitename"><a href="/">{{ site.name }}</a></p>
+              <p class="sitename"><a href="/"><img src="{{ site.meta_image_url }}" alt="{{ site.name }}" /></a></p>
 
               {{ content_for_footer }}
 
@@ -226,11 +242,13 @@
               {% if site.has_facebook_page? or site.has_twitter? %}
               <div class="footer-social-nav">
                 <ul>
+                  <li><a target="_blank" href="https://www.instagram.com/rcvfortx/"><i class="fab fa-instagram"></i></a></li>
+                  <li><a target="_blank" href="https://www.linkedin.com/company/ranked-choice-voting-for-texas/"><i class="fab fa-linkedin"></i></a></li>
                   {% if site.has_twitter? %}
-                  <li><a target="_blank" class="icon-twitter-rounded" href="{{ site.broadcaster.twitter_profile_url }}"></a></li>
+                  <li><a target="_blank" href="{{ site.broadcaster.twitter_profile_url }}"><i class="fab fa-twitter"></i></a></li>
                   {% endif %}
                   {% if site.has_facebook_page? %}
-                  <li class="fb"><a target="_blank" class="icon-facebook-rounded" href="{{ site.broadcaster.facebook_page_profile_url }}"></a></li>
+                  <li class="fb"><a target="_blank" href="{{ site.broadcaster.facebook_page_profile_url }}"><i class="fab fa-facebook"></i></a></li>
                   {% endif %}
                 </ul>
               </div><!-- / .social-nav -->
@@ -251,7 +269,7 @@
                   <p>Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
                       href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.</p>
                 {% endif %}
-                <p>Created with <a href="http://nationbuilder.com/">NationBuilder</a> &ndash; Theme by <a href="http://www.tectonica.co/">Tectonica</a></p>
+                <p>Created with <a href="{{ site.attribution_url }}">NationBuilder</a> &ndash; Theme by <a href="http://www.tectonica.co/">Tectonica</a></p>
               </div>
             </div>
 

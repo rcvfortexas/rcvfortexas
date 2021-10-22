@@ -51,6 +51,13 @@
           <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
           <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ page.recruiting.featured_page.full_url_with_recruiter }}" data-via="{{ site.broadcaster.twitter_login }}" data-related="{{ site.broadcaster.twitter_login }}" data-text="{{ page.recruiting.default_tweet_text }}">Tweet</a>
 		</div>
+  </div>
+
+  <div class="whatsapp connect">
+		<h4>Share with WhatsApp</h4>
+		<div class="padtopless">
+      <a class="whatsapp-share-button" href="https://api.whatsapp.com/send?text={{ page.full_url_with_recruiter }}">WhatsApp</a>
+		</div>
 	</div>
 
 	<div class="linkedin connect">
@@ -58,27 +65,6 @@
       <div class="padtopless">
         <script type="text/javascript" src="//platform.linkedin.com/in.js"></script><script type="in/share" data-url="{{ page.recruiting.featured_page.full_url_with_recruiter }}" data-counter="right"></script>
       </div>
-	</div>
-
-	<script type="text/javascript" src="//platform.tumblr.com/v1/share.js"></script>
-	<div class="t-r-d connect clearfix">
-
-      <h4>You can also post to Tumblr, Reddit, and Digg.</h4>
-
-      <ul>
-
-        <li><a href="http://www.tumblr.com/share/link?url={{ page.recruiting.featured_page.full_url_with_recruiter | escape }}&name={{ page.recruiting.featured_page.headline | escape }}&description={{ page.recruiting.default_tweet_text | escape }}" title="Post on Tumblr">Tumblr {{ "tumblr32" | icon }}</a></li>
-
-        <li><a href="http://reddit.com/submit?title={{ page.recruiting.featured_page.headline | escape }}&url={{ page.recruiting.featured_page.full_url_with_recruiter | escape }}">Reddit {{ "reddit32" | icon }}</a></li>
-
-        <li><a href="http://digg.com/submit?url={{ page.recruiting.featured_page.full_url_with_recruiter | escape }}&title={ page.recruiting.featured_page.headline | escape }}">
-          <!--<span style="display:none">{{ page.recruiting.default_tweet_text}}</span>-->
-          Digg
-          {{ "digg32" | icon }}
-        </a></li>
-
-      </ul>
-
 	</div>
 
 	{% if request.sorta_logged_in? and page.recruiting.show_followers? and request.current_signup.followers_count > 0 %}

@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="row-fluid">
-                  
+
                   <div class="span6 us-or-canada us-only hide">
                     {% collection_select "billing_address.state", page.donation.us_states, "code", "name", class:"select", placeholder:"State" %}
                   </div>
@@ -355,6 +355,8 @@
 
                     {% endif %}
                   </div>
+
+                  <div id="recaptcha_checkbox"></div>
 
                   <div class="padtop">
                     {% submit_tag "Process Donation", class:"progress-stage-button button call-to call-to-green" %}
