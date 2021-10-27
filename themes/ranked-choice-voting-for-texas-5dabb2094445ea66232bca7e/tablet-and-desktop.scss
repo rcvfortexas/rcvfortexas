@@ -386,7 +386,17 @@ nav, .subnav {
   & > li:nth-last-child(1) {
     &:not(.active) {
       & > a {
-        background-color: $theme-color-6;
+        // background-color: $theme-color-6;
+        color: $theme-color-1;
+        background-color: white;
+        border-color: white;
+        text-shadow: #ccc 0 0 1px;
+        &:hover {
+          background: $bg-nav-link_hover;
+          color: $nav-link-color-hover;
+          border-color: $bg-nav-border-link;
+          text-shadow: $nav-link-text-shadow-hover 0 1px;
+        }
       }
     }
   }
