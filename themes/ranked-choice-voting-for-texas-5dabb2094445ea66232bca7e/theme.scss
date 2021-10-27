@@ -3601,3 +3601,27 @@ hr.orsignin-before {
 .max-w-txaddress {
   max-width: 550px;
 }
+
+.donation-sel-options {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.donation-sel-option {
+  display: flex;
+  padding: 10px 18px;
+  max-width: 275px;
+  &:nth-child(n+2) {
+    border-left: 1px solid #ccc;
+  }
+  label {
+    margin-left: 10px;
+    line-height: 18px;
+  }
+}
+
+.donation-sel-hdg {
+  font-size: 16px;
+  font-weight: bold;
+}
+
