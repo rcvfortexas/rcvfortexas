@@ -13,7 +13,7 @@
         {% if site.show_parent_in_nav_dropdown? %}
         <li class="show-parent"><a href="{{ child.url }}">{{ child.name }}</a></li>
         {% else %}
-        <li class="show-parent mobile-visible"><a href="{{ child.url }}">{{ child.name }}</a></li>
+        <li class="show-parent mobile-visible" style="display:none;"><a href="{{ child.url }}">{{ child.name }}</a></li>
         {% endif %}
         {% for child2 in child.nav_children %}
         <li><a href="{{ child2.url }}">{{ child2.name }}</a></li>

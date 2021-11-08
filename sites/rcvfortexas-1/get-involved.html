@@ -68,6 +68,9 @@
       <div class="row-fluid">
         <div class="span12"><label for="signup_submitted_address">Address (Street, City, State, Postal code)</label>{% text_field "submitted_address", class:"text" %}</div>
       </div>
+      <div class="row-fluid">
+        <div class="span12"><label for="signup_country_code">Country</label>{% collection_select "country_code", page.signup.countries, "code", "name", class:"select" %}</div>
+      </div>
       {% endif %}
 
       {% endif %}

@@ -182,10 +182,12 @@
   </div>
   {% endif %}
 
+  {% comment %}
   <div class="like-page">
     <strong>Like this to encourage your friends to volunteer.</strong>
     {% include "like_page" %}
   </div>
+  {% endcomment %}
 
   {% if page.show_stream? %}
   {% include "page_stream" %}
