@@ -9,12 +9,28 @@
   <p class="donate-type-intro">Please choose how you'd like your donation to be used:</p>
   <div class="donation-sel-options">
       <div class="donation-sel-option">
-          <input onchange="location.href='/donate';" type="radio" name="donateTo" value="0" checked="checked">
-          <label><span class="donation-sel-hdg">Education &amp; Outreach</span><br />These donations to our 501(c)(3) are tax-deductible.</label>
+        <label>
+          <div style="display: flex;">
+            <div style="margin-right: 8px; margin-top: 1px;">
+              <input onchange="location.href='/donate';" type="radio" name="donateTo" value="0" checked="checked">
+            </div>
+            <div>
+              <span class="donation-sel-hdg">Education &amp; Outreach</span><br />These donations to our 501(c)(3) are tax-deductible.
+            </div>
+          </div>
+        </label>
       </div>
       <div class="donation-sel-option">
-          <input onchange="location.href='/donate_3';" type="radio" name="donateTo" value="1">
-          <label><span class="donation-sel-hdg">Legislative Advocacy</span><br />These donations to our 501(c)(4) are <em>not</em> tax-deductible.</label>
+        <label>
+          <div style="display: flex;">
+            <div style="margin-right: 8px; margin-top: 1px;">
+              <input onchange="location.href='/donate_3';" type="radio" name="donateTo" value="1">
+            </div>
+            <div>
+              <span class="donation-sel-hdg">Legislative Advocacy</span><br>These donations to our 501(c)(4) are <em>not</em> tax-deductible.
+            </div>
+          </div>
+        </label>
       </div>
   </div>
 
