@@ -179,8 +179,8 @@
                 <h3>News</h3>
                 <ul class="top-news-list">
                   <li>We're actively recruiting &mdash; <a href="/volunteer_1">volunteer today!</a></li>
-                  {% for event in site.upcoming_event_pages limit:1 %}
-                    <li>Next event: {{ event.event.local_start_at | date: '%A, %b. %-d' }}{% if event.event.is_multi_day? %} through {{ event.event.local_end_at | date: '%A, %b. %-d }}{% endif %}. <a href="/calendar_2">View our events calendar.</a></li>
+                  {% for event_page in site.upcoming_event_pages limit:1 %}
+                    <li>Next event: {{ event_page.event.local_start_at | date: '%A, %b. %-d' }}{% if event_page.event.is_multi_day? %} through {{ event_page.event.local_end_at | date: '%A, %b. %-d' }}{% endif %}. <a href="/calendar_2">View our events calendar.</a></li>
                   {% endfor %}
                 </ul>
               </div>
