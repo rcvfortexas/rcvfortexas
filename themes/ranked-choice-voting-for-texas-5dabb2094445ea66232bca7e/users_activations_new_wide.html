@@ -18,12 +18,15 @@
         {% text_field "username", class:"text" %}
       </div>
 
+      {% comment %}
       <div class="span6 padtopmore">
         <small class="padtop">Your public profile will be at {{ site.full_url }}{% if request.current_signup.has_username? %}{{ request.current_signup.username }}{% else %}username{% endif %}</small>
       </div>
+      {% endcomment %}
 
     </div>
 
+    {% comment %}
     {% if activation.is_address_needed %}
     <div class="row-fluid">
 
@@ -37,6 +40,7 @@
 
     </div>
     {% endif %}
+    {% endcomment %}
   
   	<div class="row-fluid">
 
